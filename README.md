@@ -2,7 +2,7 @@
 
 A Node.js automation tool for managing multiple Capfizz Sentry Node accounts with parallel mining and real-time monitoring dashboard.
 
-## Features
+## BOT FEATURE
 
 - Multi-account parallel mining
 - Automatic ping every 60 seconds per account
@@ -12,28 +12,28 @@ A Node.js automation tool for managing multiple Capfizz Sentry Node accounts wit
 - Easy configuration management
 - Modular and maintainable structure
 
-## Prerequisites
+## PREREQUISITE
 
 Before running the bot, you need to:
 
 1. Register an account at [Capfizz Mainnet](https://mainnet.capfizz.com/)
 2. Install the [Capfizz Sentry Node Extension](https://chromewebstore.google.com/detail/capfizz-sentry-node/agollninopbkafedoijcnbdopajjjmfa) in your Chrome browser
 
-## Installation
+## SETUP & CONFIGURE BOT
 
-1. Clone this repository:
+1. Clone this repository
 
 ```bash
 git clone https://github.com/Rambeboy/capfizz-node-bot.git && cd capfizz-node-bot
 ```
 
-2. Install dependencies:
+2. Install dependencies
 
 ```bash
-npm install
+npm install && npm run setup
 ```
 
-## Configuration
+## CONFIGURATION
 
 ### Getting Your Account Cookie
 
@@ -43,14 +43,22 @@ npm install
 4. Copy the cookie from the request headers
 5. Add the cookie to `data.txt` (one cookie per line for multiple accounts)
 
-## Usage
+## USAGE
 
-1. Add your account cookie(s) to `data.txt`:
-
-```
-cookie_string_here
-another_cookie_string_here
-```
+1. Add your account cookie(s) to `config.js`:
+   ```bash
+   nano config/config.js
+   ```
+   Example:
+   ```bash
+   module.exports = {
+   cookies: [
+   "cookie1_value",
+   "cookie2_value",
+   "cookie3_value",
+   ],
+   };
+   ```
 
 2. Run the bot:
 
@@ -58,7 +66,7 @@ another_cookie_string_here
 npm run start
 ```
 
-## Dashboard Interface
+## DASHBOARD INTERFACE
 
 The dashboard shows:
 
@@ -66,12 +74,12 @@ The dashboard shows:
 - Mining Statistics: Total points, successful mines, and failed mines
 - Account List: Status of all configured accounts
 
-## Controls
+## CONTROLS
 
 - Press `q` to quit
 - Press `Esc` to exit
 - Press `Ctrl+C` to terminate
 
-## License
+## LICENSE
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.
