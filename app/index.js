@@ -1,11 +1,12 @@
 const fs = require("fs");
 const blessed = require("blessed");
 const contrib = require("blessed-contrib");
-const dashboardConfig = require("./src/services/dashboard");
-const { bannerConfig } = require("./src/utils/twist");
-const CapfizzMiner = require("./src/services/CapfizzMiner");
-const logger = require("./src/utils/logger");
-const { delay } = require("./src/utils/helpers");
+const dashboardConfig = require("./src/services/dashboard.js");
+const { bannerConfig } = require("./src/utils/twist.js");
+const CapfizzMiner = require("./src/services/CapfizzMiner.js");
+const logger = require("./src/utils/logger.js");
+const { delay } = require("./src/utils/helpers.js");
+const { cookies } = require("../config/config.js");
 
 const screen = blessed.screen(dashboardConfig.screen);
 const grid = new contrib.grid({ ...dashboardConfig.grid, screen });
@@ -117,7 +118,8 @@ async function startMining(miner, accounts) {
 }
 
 async function main() {
-  const uniqueCookies = [
+  try {
+    const uniqueCookies = [
       ...new Set(rawCookies.map((cookie) => cookie.trim())),];
 
     logger.log(
