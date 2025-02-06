@@ -4,10 +4,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node scripts/start.js",
+    "setup": "node scripts/setup.js",
     "build": "rm -rf app && javascript-obfuscator --config build-config.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "capfizz",
+    "extension",
+    "mainnet",
+    "testnet",
+    "node-bot",
+    "rambeboy"
+  ],
   "author": "Rambeboy",
   "license": "ISC",
   "description": "",
