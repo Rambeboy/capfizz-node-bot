@@ -1,2 +1,0 @@
-cookie account 1
-cookie account 2
