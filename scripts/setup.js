@@ -1,1 +1,40 @@
-const _0x1b0f5b=_0x5c1e;(function(_0x2ff3da,_0xefbdc4){const _0x18d30d=_0x5c1e,_0x6246b9=_0x2ff3da();while(!![]){try{const _0x1b2656=-parseInt(_0x18d30d(0x1b9))/0x1*(parseInt(_0x18d30d(0x1ce))/0x2)+parseInt(_0x18d30d(0x1c0))/0x3+-parseInt(_0x18d30d(0x1bf))/0x4*(-parseInt(_0x18d30d(0x1c3))/0x5)+-parseInt(_0x18d30d(0x1c4))/0x6*(parseInt(_0x18d30d(0x1cf))/0x7)+-parseInt(_0x18d30d(0x1c5))/0x8+-parseInt(_0x18d30d(0x1ba))/0x9+-parseInt(_0x18d30d(0x1bb))/0xa*(-parseInt(_0x18d30d(0x1cb))/0xb);if(_0x1b2656===_0xefbdc4)break;else _0x6246b9['push'](_0x6246b9['shift']());}catch(_0x4b1061){_0x6246b9['push'](_0x6246b9['shift']());}}}(_0x1e72,0x41a97));function _0x5c1e(_0x58e46f,_0x34d9a5){const _0x1e72d2=_0x1e72();return _0x5c1e=function(_0x5c1e0a,_0x1dfe16){_0x5c1e0a=_0x5c1e0a-0x1b9;let _0x2bd32f=_0x1e72d2[_0x5c1e0a];return _0x2bd32f;},_0x5c1e(_0x58e46f,_0x34d9a5);}const fs=require('fs'),path=require(_0x1b0f5b(0x1c8));async function fileExists(_0x5271ae){const _0x361cf9=_0x1b0f5b;try{return await _0x5b7c6d[_0x361cf9(0x1ca)][_0x361cf9(0x1be)](_0x5271ae),!![];}catch{return![];}}async function copyFile(_0x505a59,_0x52e96f){const _0x5ce30f=_0x1b0f5b;try{await fileExists(_0x52e96f)?console['log'](_0x5ce30f(0x1bc)+_0x52e96f+_0x5ce30f(0x1c6)):(await _0x5b7c6d[_0x5ce30f(0x1ca)][_0x5ce30f(0x1d1)](_0x505a59,_0x52e96f),console[_0x5ce30f(0x1d3)]('Copied\x20'+_0x505a59+'\x20to\x20'+_0x52e96f));}catch(_0x462172){console['error'](_0x5ce30f(0x1cd)+_0x505a59+_0x5ce30f(0x1cc)+_0x52e96f+':',_0x462172);}}function _0x1e72(){const _0x41e451=['1415QnYiEl','48HUKSdj','2904824geIKLD',',\x20skipping\x20copy.','Copying\x20Template\x20File','path','join','promises','1099868XxTVdM','\x20to\x20','Error\x20copying\x20file\x20from\x20','82PSJIrW','120449Dywwod','config.js','copyFile','\x0aSetup\x20Complete','log','327KBADcH','2134548IfpDle','50seVIXe','File\x20already\x20exists\x20at\x20','config_tmp.js','access','2348wmAlge','1062684uRcVzJ','config','Open\x20And\x20Configure\x0a-\x20config/config.js'];_0x1e72=function(){return _0x41e451;};return _0x1e72();}const copyOperations=[{'src':_0x129e8c[_0x1b0f5b(0x1c9)](_0x1b0f5b(0x1c1),_0x1b0f5b(0x1bd)),'dest':_0x129e8c[_0x1b0f5b(0x1c9)](_0x1b0f5b(0x1c1),_0x1b0f5b(0x1d0))}];((async()=>{const _0x4b2bda=_0x1b0f5b;console['log'](_0x4b2bda(0x1c7));for(let {src:_0x189401,dest:_0x1d7006}of copyOperations){await copyFile(_0x189401,_0x1d7006);}console[_0x4b2bda(0x1d3)](_0x4b2bda(0x1d2)),console[_0x4b2bda(0x1d3)](_0x4b2bda(0x1c2));})());
+const fs = require("fs");
+const path = require("path");
+
+async function fileExists(filePath) {
+  try {
+    await fs.promises.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function copyFile(src, dest) {
+  try {
+    if (await fileExists(dest)) {
+      console.log(`File already exists at ${dest}, skipping copy.`);
+    } else {
+      await fs.promises.copyFile(src, dest);
+      console.log(`Copied ${src} to ${dest}`);
+    }
+  } catch (err) {
+    console.error(`Error copying file from ${src} to ${dest}:`, err);
+  }
+}
+
+const copyOperations = [
+  {
+    src: path.join("config", "config_tmp.js"),
+    dest: path.join("config", "config.js"),
+  },
+];
+
+(async () => {
+  console.log(`Copying Template File`);
+  for (let { src, dest } of copyOperations) {
+    await copyFile(src, dest);
+  }
+  console.log(`\nSetup Complete`);
+  console.log(`Open And Configure\n- config/config.js`);
+})();
