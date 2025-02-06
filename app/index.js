@@ -1,1 +1,176 @@
-const _0x1e445f=_0x44ec;(function(_0x3d894e,_0x9a8155){const _0x475134=_0x44ec,_0xbd0710=_0x3d894e();while(!![]){try{const _0x1d9acb=-parseInt(_0x475134(0x19d))/0x1*(-parseInt(_0x475134(0x19e))/0x2)+-parseInt(_0x475134(0x1a4))/0x3*(parseInt(_0x475134(0x1bf))/0x4)+-parseInt(_0x475134(0x183))/0x5+parseInt(_0x475134(0x1b8))/0x6+parseInt(_0x475134(0x1cf))/0x7+-parseInt(_0x475134(0x1b0))/0x8+parseInt(_0x475134(0x19a))/0x9*(parseInt(_0x475134(0x1a3))/0xa);if(_0x1d9acb===_0x9a8155)break;else _0xbd0710['push'](_0xbd0710['shift']());}catch(_0x18f137){_0xbd0710['push'](_0xbd0710['shift']());}}}(_0x1d4b,0x54f0f));const fs=require('fs'),blessed=require('blessed'),contrib=require(_0x1e445f(0x1a6)),dashboardConfig=require(_0x1e445f(0x1ad)),{cookies}=require(_0x1e445f(0x1be)),{bannerConfig}=require(_0x1e445f(0x193)),CapfizzMiner=require('./src/services/CapfizzMiner'),logger=require(_0x1e445f(0x1b7)),{delay}=require('./src/utils/helpers'),screen=blessed[_0x1e445f(0x17e)](dashboardConfig['screen']),grid=new contrib[(_0x1e445f(0x189))]({...dashboardConfig[_0x1e445f(0x189)],'screen':screen});bannerConfig[_0x1e445f(0x1a0)]=screen;const accountLog=grid[_0x1e445f(0x187)](...dashboardConfig[_0x1e445f(0x1c6)][_0x1e445f(0x19f)][_0x1e445f(0x1a9)],contrib['log'],dashboardConfig['components'][_0x1e445f(0x19f)][_0x1e445f(0x17d)]),miningStats=grid[_0x1e445f(0x187)](...dashboardConfig['components'][_0x1e445f(0x1c9)][_0x1e445f(0x1a9)],contrib[_0x1e445f(0x18c)],dashboardConfig['components'][_0x1e445f(0x1c9)][_0x1e445f(0x17d)]),accountList=grid[_0x1e445f(0x187)](...dashboardConfig[_0x1e445f(0x1c6)][_0x1e445f(0x1b5)][_0x1e445f(0x1a9)],contrib[_0x1e445f(0x18c)],dashboardConfig['components'][_0x1e445f(0x1b5)][_0x1e445f(0x17d)]);function _0x1d4b(){const _0x5226bf=['getUserInfo','forEach','position','{red-fg}Main\x20process\x20failed:\x20','points','map','./src/services/dashboard','{red-fg}Authentication\x20failed,\x20skipping\x20account{/red-fg}','stopPing','5522616MtyhGE','exports','Metric','checkAuth','setData','accountList','failedMines','./src/utils/logger','2994270vvMywO','\x20unique\x20accounts\x20to\x20process{/green-fg}','render','{/green-fg}','success','{red-fg}Error\x20mining\x20for\x20','../config/config','98068XFsotB','escape','toString','{green-fg}Found\x20','userEmail','length','Failed\x20Mines','components','nodeId','all','miningStats','toFixed','reduce','log','{green-fg}Authentication\x20successful{/green-fg}','...{/yellow-fg}','3195857YWLtXo','{red-fg}Authentication\x20failed\x20for\x20','message','config','screen','push','{green-fg}Points\x20earned\x20for\x20','{green-fg}Mining\x20successful\x20for\x20','Total\x20Points','2506295yAqKde','Node\x20ID','userInfo','\x20pts','set','{/red-fg}','grid','{red-fg}Error\x20initializing\x20account:\x20','Status','table','setUserEmail','Successful\x20Mines','Email','status','exit','stats','./src/utils/twist','C-c','{yellow-fg}Attempting\x20to\x20mine\x20for\x20','key','email','successfulMines','N/A','53316rGWPHI','data','totalPoints','1772gZsLPl','40fmXAvf','accountLog','parent','setLogger','trim','1050rOGPfJ','9EjJKmS','nodeInfo','blessed-contrib'];_0x1d4b=function(){return _0x5226bf;};return _0x1d4b();}logger[_0x1e445f(0x1a1)](accountLog);const miners=new Map();screen[_0x1e445f(0x196)]([_0x1e445f(0x1c0),'q',_0x1e445f(0x194)],function(_0x44ca58,_0x111554){const _0x3071e2=_0x1e445f;return miners[_0x3071e2(0x1a8)](_0x199a91=>_0x199a91[_0x3071e2(0x1af)]()),process[_0x3071e2(0x191)](0x0);});function updateDashboard(_0x552ef9){const _0x29ead2=_0x1e445f,_0x97f365=_0x552ef9[_0x29ead2(0x1ac)](_0x32c4c0=>[_0x32c4c0[_0x29ead2(0x197)]||'N/A',_0x32c4c0[_0x29ead2(0x190)]||_0x29ead2(0x199),_0x32c4c0[_0x29ead2(0x1c7)]||_0x29ead2(0x199),_0x32c4c0[_0x29ead2(0x192)][_0x29ead2(0x19c)]['toFixed'](0x2)+_0x29ead2(0x186)]);accountList['setData']({'headers':[_0x29ead2(0x18f),_0x29ead2(0x18b),_0x29ead2(0x184),_0x29ead2(0x182)],'data':_0x97f365});const _0x301195=_0x552ef9[_0x29ead2(0x1cb)]((_0x245e79,_0x59f8f3)=>{const _0x55db69=_0x29ead2;return _0x245e79[_0x55db69(0x19c)]+=_0x59f8f3[_0x55db69(0x192)][_0x55db69(0x19c)],_0x245e79[_0x55db69(0x198)]+=_0x59f8f3[_0x55db69(0x192)]['successfulMines'],_0x245e79[_0x55db69(0x1b6)]+=_0x59f8f3[_0x55db69(0x192)][_0x55db69(0x1b6)],_0x245e79;},{'totalPoints':0x0,'successfulMines':0x0,'failedMines':0x0});miningStats[_0x29ead2(0x1b4)]({'headers':[_0x29ead2(0x1b2),'Value'],'data':[[_0x29ead2(0x182),_0x301195[_0x29ead2(0x19c)][_0x29ead2(0x1ca)](0x2)],[_0x29ead2(0x18e),_0x301195[_0x29ead2(0x198)][_0x29ead2(0x1c1)]()],[_0x29ead2(0x1c5),_0x301195['failedMines'][_0x29ead2(0x1c1)]()]]}),screen[_0x29ead2(0x1ba)]();}function _0x44ec(_0x3deed7,_0x8de407){const _0x1d4b36=_0x1d4b();return _0x44ec=function(_0x44ecbd,_0x1dff90){_0x44ecbd=_0x44ecbd-0x17c;let _0x2d14a1=_0x1d4b36[_0x44ecbd];return _0x2d14a1;},_0x44ec(_0x3deed7,_0x8de407);}async function startMining(_0xe1fffa,_0x1f0964){const _0xa357d8=_0x1e445f;while(!![]){try{const _0x8b42a5=await _0xe1fffa[_0xa357d8(0x1b3)]();if(!_0x8b42a5){logger[_0xa357d8(0x1cc)](_0xa357d8(0x1d0)+_0xe1fffa[_0xa357d8(0x1c3)]+_0xa357d8(0x188)),await delay(0x7530);continue;}logger['log'](_0xa357d8(0x195)+_0xe1fffa['userEmail']+_0xa357d8(0x1ce));const _0x14d8c2=await _0xe1fffa['mine']();_0x14d8c2&&(_0x14d8c2[_0xa357d8(0x1bc)]?(logger['log'](_0xa357d8(0x181)+_0xe1fffa[_0xa357d8(0x1c3)]+':\x20'+_0x14d8c2[_0xa357d8(0x17c)]+_0xa357d8(0x1bb)),logger['log'](_0xa357d8(0x180)+_0xe1fffa[_0xa357d8(0x1c3)]+':\x20'+_0x14d8c2[_0xa357d8(0x1ab)]+'{/green-fg}')):logger['log']('{red-fg}Mining\x20failed\x20for\x20'+_0xe1fffa['userEmail']+':\x20'+_0x14d8c2[_0xa357d8(0x17c)]+_0xa357d8(0x188)),updateDashboard(_0x1f0964));}catch(_0x50ae1e){logger[_0xa357d8(0x1cc)](_0xa357d8(0x1bd)+_0xe1fffa[_0xa357d8(0x1c3)]+':\x20'+_0x50ae1e[_0xa357d8(0x17c)]+_0xa357d8(0x188)),await delay(0x2710);}}}async function main(){const _0x1ca7f3=_0x1e445f;try{const _0x11ba8f=[...new Set(cookies['map'](_0x5c34a4=>_0x5c34a4[_0x1ca7f3(0x1a2)]()))];logger['log'](_0x1ca7f3(0x1c2)+_0x48dbdf[_0x1ca7f3(0x1c4)]+_0x1ca7f3(0x1b9));const _0xec37e=[],_0x1ab498=[];for(const _0x579282 of _0x48dbdf){try{const _0xf8c718=new CapfizzMiner(_0x579282);miners[_0x1ca7f3(0x187)](_0x579282,_0xf8c718);const _0x469de4=await _0xf8c718[_0x1ca7f3(0x1b3)]();if(!_0x469de4){logger[_0x1ca7f3(0x1cc)](_0x1ca7f3(0x1ae));continue;}logger[_0x1ca7f3(0x1cc)](_0x1ca7f3(0x1cd));const _0x45ae68=await _0xf8c718[_0x1ca7f3(0x1a7)]();if(_0x45ae68){const _0x42684a={'email':_0x45ae68['data'][_0x1ca7f3(0x185)][_0x1ca7f3(0x197)],'status':_0x45ae68[_0x1ca7f3(0x19b)]['status'],'nodeId':_0x45ae68[_0x1ca7f3(0x19b)][_0x1ca7f3(0x1a5)][_0x1ca7f3(0x1c7)],'stats':_0xf8c718[_0x1ca7f3(0x192)],'cookie':_0x579282};_0xec37e[_0x1ca7f3(0x17f)](_0x42684a),_0xf8c718[_0x1ca7f3(0x18d)](_0x45ae68['data']['userInfo'][_0x1ca7f3(0x197)]),_0xf8c718['startPing'](),_0x1ab498[_0x1ca7f3(0x17f)](startMining(_0xf8c718,_0xec37e));}}catch(_0x1095fc){logger[_0x1ca7f3(0x1cc)](_0x1ca7f3(0x18a)+_0x1095fc[_0x1ca7f3(0x17c)]+'{/red-fg}');}}updateDashboard(_0xec37e),await Promise[_0x1ca7f3(0x1c8)](_0x1ab498);}catch(_0x22eadc){logger[_0x1ca7f3(0x1cc)](_0x1ca7f3(0x1aa)+_0x22eadc[_0x1ca7f3(0x17c)]+_0x1ca7f3(0x188));}}module[_0x1e445f(0x1b1)]={'main':main,'screen':screen};
+const fs = require("fs");
+const blessed = require("blessed");
+const contrib = require("blessed-contrib");
+const dashboardConfig = require("./src/services/dashboard");
+const { bannerConfig } = require("./src/utils/twist");
+const CapfizzMiner = require("./src/services/CapfizzMiner");
+const logger = require("./src/utils/logger");
+const { delay } = require("./src/utils/helpers");
+
+const screen = blessed.screen(dashboardConfig.screen);
+const grid = new contrib.grid({ ...dashboardConfig.grid, screen });
+
+bannerConfig.parent = screen;
+const bannerBox = blessed.box(bannerConfig);
+
+const accountLog = grid.set(
+  ...dashboardConfig.components.accountLog.position,
+  contrib.log,
+  dashboardConfig.components.accountLog.config
+);
+
+const miningStats = grid.set(
+  ...dashboardConfig.components.miningStats.position,
+  contrib.table,
+  dashboardConfig.components.miningStats.config
+);
+
+const accountList = grid.set(
+  ...dashboardConfig.components.accountList.position,
+  contrib.table,
+  dashboardConfig.components.accountList.config
+);
+
+logger.setLogger(accountLog);
+
+const miners = new Map();
+
+screen.key(["escape", "q", "C-c"], function (ch, key) {
+  miners.forEach((miner) => miner.stopPing());
+  return process.exit(0);
+});
+
+function updateDashboard(accounts) {
+  const accountData = accounts.map((account) => [
+    account.email || "N/A",
+    account.status || "N/A",
+    account.nodeId || "N/A",
+    `${account.stats.totalPoints.toFixed(2)} pts`,
+  ]);
+
+  accountList.setData({
+    headers: ["Email", "Status", "Node ID", "Total Points"],
+    data: accountData,
+  });
+
+  const totalStats = accounts.reduce(
+    (acc, account) => {
+      acc.totalPoints += account.stats.totalPoints;
+      acc.successfulMines += account.stats.successfulMines;
+      acc.failedMines += account.stats.failedMines;
+      return acc;
+    },
+    { totalPoints: 0, successfulMines: 0, failedMines: 0 }
+  );
+
+  miningStats.setData({
+    headers: ["Metric", "Value"],
+    data: [
+      ["Total Points", totalStats.totalPoints.toFixed(2)],
+      ["Successful Mines", totalStats.successfulMines.toString()],
+      ["Failed Mines", totalStats.failedMines.toString()],
+    ],
+  });
+
+  screen.render();
+}
+
+async function startMining(miner, accounts) {
+  while (true) {
+    try {
+      const isAuth = await miner.checkAuth();
+      if (!isAuth) {
+        logger.log(
+          `{red-fg}Authentication failed for ${miner.userEmail}{/red-fg}`
+        );
+        await delay(30000);
+        continue;
+      }
+
+      logger.log(
+        `{yellow-fg}Attempting to mine for ${miner.userEmail}...{/yellow-fg}`
+      );
+      const miningResult = await miner.mine();
+
+      if (miningResult) {
+        if (miningResult.success) {
+          logger.log(
+            `{green-fg}Mining successful for ${miner.userEmail}: ${miningResult.message}{/green-fg}`
+          );
+          logger.log(
+            `{green-fg}Points earned for ${miner.userEmail}: ${miningResult.points}{/green-fg}`
+          );
+        } else {
+          logger.log(
+            `{red-fg}Mining failed for ${miner.userEmail}: ${miningResult.message}{/red-fg}`
+          );
+        }
+        updateDashboard(accounts);
+      }
+    } catch (error) {
+      logger.log(
+        `{red-fg}Error mining for ${miner.userEmail}: ${error.message}{/red-fg}`
+      );
+      await delay(10000);
+    }
+  }
+}
+
+async function main() {
+  const uniqueCookies = [
+      ...new Set(rawCookies.map((cookie) => cookie.trim())),];
+
+    logger.log(
+      `{green-fg}Found ${uniqueCookies.length} unique accounts to process{/green-fg}`
+    );
+
+    const accounts = [];
+    const miningPromises = [];
+
+    for (const cookie of uniqueCookies) {
+      try {
+        const miner = new CapfizzMiner(cookie);
+        miners.set(cookie, miner);
+
+        const isAuth = await miner.checkAuth();
+        if (!isAuth) {
+          logger.log(
+            `{red-fg}Authentication failed, skipping account{/red-fg}`
+          );
+          continue;
+        }
+        logger.log(`{green-fg}Authentication successful{/green-fg}`);
+
+        const userInfo = await miner.getUserInfo();
+        if (userInfo) {
+          const account = {
+            email: userInfo.data.userInfo.email,
+            status: userInfo.data.status,
+            nodeId: userInfo.data.nodeInfo.nodeId,
+            stats: miner.stats,
+            cookie: cookie,
+          };
+          accounts.push(account);
+          miner.setUserEmail(userInfo.data.userInfo.email);
+
+          miner.startPing();
+
+          miningPromises.push(startMining(miner, accounts));
+        }
+      } catch (error) {
+        logger.log(
+          `{red-fg}Error initializing account: ${error.message}{/red-fg}`
+        );
+      }
+    }
+
+    updateDashboard(accounts);
+
+    await Promise.all(miningPromises);
+  } catch (error) {
+    logger.log(`{red-fg}Main process failed: ${error.message}{/red-fg}`);
+  }
+}
+
+screen.render();
+main();
