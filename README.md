@@ -39,7 +39,7 @@ Before running the bot, you need to:
 2. Click "Inspect Popup"
 3. Go to the "Network" tab
 4. Copy the cookie from the request headers
-5. Add the cookie to `data.txt` (one cookie per line for multiple accounts)
+5. Add the cookie to `config.js` (one cookie per line for multiple accounts)
 
 ## USAGE
 
