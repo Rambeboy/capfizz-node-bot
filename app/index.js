@@ -119,6 +119,10 @@ async function startMining(miner, accounts) {
 
 async function main() {
   try {
+    if (!cookies || !Array.isArray(cookies) || cookies.length === 0) {
+  console.error("Cookies not found or invalid in config.js");
+  process.exit(1);
+    }
     const uniqueCookies = [
       ...new Set(rawCookies.map((cookie) => cookie.trim())),];
 
