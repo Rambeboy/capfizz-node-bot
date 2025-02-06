@@ -123,9 +123,8 @@ async function main() {
   console.error("Cookies not found or invalid in config.js");
   process.exit(1);
     }
-    const uniqueCookies = [
-      ...new Set(rawCookies.map((cookie) => cookie.trim())),];
-
+    const uniqueCookies = [...new Set(cookies.map((cookie) => cookie.trim()))];
+    console.log(`Loaded ${uniqueCookies.length} unique cookies.`);
     logger.log(
       `{green-fg}Found ${uniqueCookies.length} unique accounts to process{/green-fg}`
     );
