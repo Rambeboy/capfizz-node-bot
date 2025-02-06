@@ -174,5 +174,7 @@ async function main() {
   }
 }
 
-screen.render();
-main();
+module.exports = {
+screen,
+main
+};
