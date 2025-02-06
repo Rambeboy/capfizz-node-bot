@@ -21,17 +21,15 @@ Before running the bot, you need to:
 
 ## SETUP & CONFIGURE BOT
 
-1. Clone this repository
+1. Clone Project Repository
+   ```bash
+   git clone https://github.com/Rambeboy/capfizz-node-bot.git && cd capfizz-node-bot
+   ```
 
-```bash
-git clone https://github.com/Rambeboy/capfizz-node-bot.git && cd capfizz-node-bot
-```
-
-2. Install dependencies
-
-```bash
-npm install && npm run setup
-```
+2. Install Dependencies & Setup Accounts
+   ```bash
+   npm install && npm run setup
+   ```
 
 ## CONFIGURATION
 
@@ -49,22 +47,11 @@ npm install && npm run setup
    ```bash
    nano config/config.js
    ```
-   Example:
-   ```bash
-   module.exports = {
-   cookies: [
-   "cookie1_value",
-   "cookie2_value",
-   "cookie3_value",
-   ],
-   };
-   ```
 
 2. Run the bot:
-
-```bash
-npm run start
-```
+   ```bash
+   npm run start
+   ```
 
 ## DASHBOARD INTERFACE
 
